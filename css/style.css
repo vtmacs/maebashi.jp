@@ -152,7 +152,7 @@ dd { margin-bottom: 0; }
 
 /* 日程の共催ロゴ（社名つき） */
 a.sponsor-inline { display: inline-flex; align-items: center; gap: .5rem; font-weight: 500; }
-a.sponsor-inline img { height: 22px; width: auto; mix-blend-mode: multiply; }
+a.sponsor-inline img { height: 30px; width: auto; mix-blend-mode: multiply; }
 
 /* 注意書き */
 p.notice { display: inline-block; padding: .35rem .85rem; margin-bottom: 1rem; font-size: .9rem; font-weight: 500; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; }
@@ -173,3 +173,6 @@ footer.bd-footer hr { display: none; }
 @media (max-width: 767.98px) {
   .jumbotron.special .outline { padding-left: 20px; padding-right: 20px; }
 }
+
+/* 代表の写真は文章の下に配置 */
+img.champion { display: block; width: 100%; max-width: 280px; margin-top: 1rem; }
