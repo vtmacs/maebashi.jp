@@ -70,8 +70,8 @@ img { max-width: 100%; height: auto; }
   border-bottom: 1px solid var(--c-line);
   min-height: 64px;
 }
-.navbar-brand { font-weight: 700; letter-spacing: .02em; color: var(--c-ink) !important; }
-.navbar-brand img { margin-right: .4rem; border-radius: 6px; }
+.navbar-brand { display: inline-flex; align-items: center; font-weight: 700; letter-spacing: .02em; color: var(--c-ink) !important; }
+.navbar-brand img { margin-right: .5rem; vertical-align: middle; }
 .navbar-light .navbar-nav { margin-left: auto; }
 .navbar-light .navbar-nav .nav-link {
   color: var(--c-muted); font-size: .92rem; font-weight: 500;
@@ -94,7 +94,7 @@ img { max-width: 100%; height: auto; }
   -webkit-background-clip: text; background-clip: text; color: transparent;
   margin-bottom: 1.5rem;
 }
-.jumbotron.special img.img-fluid { border-radius: var(--radius); box-shadow: var(--shadow-lg); margin-bottom: 2rem; }
+.jumbotron.special img.img-fluid { margin-bottom: 2rem; }
 .jumbotron.special p { text-align: left; color: #334155; font-size: 1.02rem; }
 .jumbotron.special strong { font-weight: 500; }
 .button-group { display: flex; flex-wrap: wrap; justify-content: center; gap: .75rem; margin-top: 1.75rem; }
@@ -143,10 +143,19 @@ dd { margin-bottom: 0; }
 .card-link { font-weight: 600; text-decoration: none; }
 .card-link::after { content: " ▾"; }
 
-/* Sponsors */
-#sponsors img { background: #fff; border: 1px solid var(--c-line); border-radius: 12px; padding: 14px; margin-bottom: 1rem; transition: box-shadow .2s, transform .2s; }
+/* Sponsors: 余白を除去した画像を、高さ基準で揃える */
+#sponsors .col-12 > .row > [class*="col-"] { display: flex; align-items: center; margin-bottom: .5rem; }
+#sponsors a { display: block; max-width: 100%; }
+#sponsors img { box-sizing: border-box; height: 76px; width: auto; max-width: 100%; object-fit: contain; background: #fff; border: 1px solid var(--c-line); border-radius: 12px; padding: 10px 16px; display: block; transition: box-shadow .2s, transform .2s; }
+#sponsors h2 + .row img { height: 88px; }
 #sponsors a:hover img { box-shadow: var(--shadow); transform: translateY(-2px); }
-#sponsors img { max-width: 100%; height: auto; }
+
+/* 日程の共催ロゴ（社名つき） */
+a.sponsor-inline { display: inline-flex; align-items: center; gap: .5rem; font-weight: 500; }
+a.sponsor-inline img { height: 22px; width: auto; mix-blend-mode: multiply; }
+
+/* 注意書き */
+p.notice { display: inline-block; padding: .35rem .85rem; margin-bottom: 1rem; font-size: .9rem; font-weight: 500; color: #9a3412; background: #fff7ed; border: 1px solid #fed7aa; border-radius: 10px; }
 
 /* Footer */
 footer.bd-footer { padding: 2rem 0 3rem; font-size: .85rem; }
